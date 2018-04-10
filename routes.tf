@@ -13,7 +13,7 @@ resource "aws_route_table" "public" {
 resource "aws_route" "public_internet_gateway" {
   count = "${length(var.public_subnets) > 0 ? 1 : 0}"
 
-  route_table_id         = "${aws_route_table.public_route_table.id}"
+  route_table_id         = "${aws_route_table.public.id}"
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = "${aws_internet_gateway.internet_gateway.id}"
 }
