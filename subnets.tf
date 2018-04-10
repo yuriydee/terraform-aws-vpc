@@ -38,7 +38,7 @@ resource "aws_subnet" "database" {
   tags = "${merge(var.tags, var.database_subnet_tags, map("Name", format("%s-db-%s", var.name, element(var.azs, count.index))))}"
 }
 
-resource "aws_db_subnet_group" "database_subnet_group" {
+resource "aws_db_subnet_group" "database" {
   count = "${length(var.database_subnets) > 0 && var.create_database_subnet_group ? 1 : 0}"
 
   name        = "${var.name}"
