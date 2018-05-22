@@ -1,5 +1,5 @@
-variable "name" {
-  description = "Name to be used on all the resources as identifier"
+variable "vpc_name" {
+  description = "VPC name to be used on all the resources as identifier"
   default     = ""
 }
 
